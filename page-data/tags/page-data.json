@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-tags-js",
+    "path": "/tags/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Milenology"}},"allMarkdownRemark":{"group":[{"fieldValue":"technology","totalCount":1}]}},"pageContext":{}},
+    "staticQueryHashes": ["3649515864","983108779"]}

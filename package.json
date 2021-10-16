@@ -1,0 +1,119 @@
+{
+  "name": "milenology-dot-com",
+  "version": "3.5.0",
+  "description": "Website for milenology.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/terlim-sfdc/milenology"
+  },
+  "scripts": {
+    "analyze:lint": "eslint --ext .jsx --ext .js .",
+    "analyze:prettier": "prettier --list-different \"**/*.{css,js,jsx,json,md}\"",
+    "analyze": "yarn run analyze:lint && yarn run analyze:prettier",
+    "lint": "eslint --ignore-path .gitignore . --ext .jsx --ext .js",
+    "format": "prettier --ignore-path .gitignore \"./**/*.+(ts|js|tsx|jsx|css|json|md)\" --write",
+    "fix": "yarn run lint --fix && yarn run format",
+    "build": "gatsby build",
+    "dev": "gatsby develop -H 0.0.0.0",
+    "start": "yarn run develop",
+    "release": "standard-version -a",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./**/*.{ts,js,tsx,jsx}": [
+      "yarn lint --fix"
+    ],
+    "./**/*.{ts,js,tsx,jsx,css,json,md}": [
+      "yarn format"
+    ]
+  },
+  "keywords": [
+    "milenology"
+  ],
+  "author": "Terence Lim <terencelim@outlook.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@react-hook/window-size": "^3.0.7",
+    "gatsby": "^3.14.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-google-tagmanager": "^3.14.0",
+    "gatsby-plugin-image": "^1.14.0",
+    "gatsby-plugin-manifest": "^3.14.0",
+    "gatsby-plugin-netlify": "^3.14.0",
+    "gatsby-plugin-nprogress": "^3.14.0",
+    "gatsby-plugin-offline": "^4.14.0",
+    "gatsby-plugin-postcss": "^4.14.0",
+    "gatsby-plugin-purgecss": "^6.0.2",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.0",
+    "gatsby-plugin-sitemap": "^4.10.0",
+    "gatsby-remark-autolink-headers": "^4.11.0",
+    "gatsby-remark-code-buttons": "^2.0.7",
+    "gatsby-remark-code-titles": "^1.1.0",
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-images": "^5.11.0",
+    "gatsby-remark-prismjs": "^5.11.0",
+    "gatsby-remark-reading-time": "^1.1.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-remark": "^4.11.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "gh-pages": "^3.2.3",
+    "lodash": "^4.17.21",
+    "postcss": "^8.3.8",
+    "prismjs": "^1.25.0",
+    "prop-types": "15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-helmet": "6.1.0",
+    "sharp": "^0.29.1",
+    "zustand": "^3.5.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/eslint-parser": "^7.15.7",
+    "@babel/plugin-proposal-decorators": "^7.15.4",
+    "@babel/runtime": "^7.15.4",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@tailwindcss/custom-forms": "0.2.1",
+    "autoprefixer": "10.3.6",
+    "babel-preset-gatsby": "^1.14.0",
+    "cssnano": "^5.0.8",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-webpack-plugin": "^3.0.1",
+    "gatsby-plugin-eslint": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "standard-version": "^9.3.1",
+    "tailwindcss": "^2.2.16",
+    "webpack": "^5.54.0"
+  },
+  "resolutionsComments": {
+    "first": "The sharp resolution is required for M1 Macs as anything below 0.28 doesn't have the sharp binaries for arm64v8"
+  },
+  "resolutions": {
+    "sharp": "^0.29.1",
+    "postcss": "^8.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/terlim-sfdc/milenology/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

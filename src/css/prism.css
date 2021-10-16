@@ -1,0 +1,202 @@
+pre[class*='language-'].line-numbers {
+  white-space: pre-wrap !important;
+}
+
+code[class*='language-'] {
+  word-break: break-all !important;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #fff0a8;
+  display: flex;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+  color: #000000;
+  text-shadow: none;
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  max-width: 90vw;
+  overflow: auto;
+  background: #1e1e1e;
+  @apply shadow-md;
+  @apply drop-shadow-md;
+  @apply p-3;
+  @apply pt-10;
+  @apply rounded-md;
+}
+
+/* Fix when certain styles override the span */
+.gatsby-highlight pre code span {
+  display: inherit;
+}
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position  of the line numbers
+ */
+.gatsby-highlight pre[class*='language-'] {
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding-left: 2.6em;
+}
+
+.markdown :not(pre) > code[class*='language-text'] {
+  background: #1e1e1e;
+  color: #ff5074;
+  border: none;
+  box-shadow: none;
+  margin-top: 0.2em;
+  text-shadow: none;
+}
+
+.command-line-prompt > span:before {
+  color: #999;
+  content: ' ';
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: '[' attr(data-user) '@' attr(data-host) '] $';
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user='root']:before {
+  content: '[' attr(data-user) '@' attr(data-host) '] #';
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}
+
+/** Code Title **/
+
+.gatsby-remark-code-title {
+  @apply z-10;
+  max-width: 90vw;
+  position: absolute;
+  background: #1e1e1e;
+  margin-bottom: -0.6rem;
+  color: #ff5074;
+  @apply py-1;
+  @apply px-3;
+  @apply rounded-md;
+}
+
+/** Copy Code Button **/
+
+.gatsby-code-button-container {
+  position: relative;
+  background: #1e1e1e;
+  touch-action: none;
+  pointer-events: none;
+  text-align: right;
+  z-index: 100;
+  max-width: 90vw;
+}
+.gatsby-code-button {
+  position: absolute;
+  top: 2.25em;
+  right: 0.75em;
+  font-size: 0.75em;
+  cursor: pointer;
+  pointer-events: initial;
+  @apply bg-blue-500;
+  opacity: 0.2;
+  color: white;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  text-align: right;
+  text-transform: uppercase;
+  @apply rounded-md;
+}
+.gatsby-code-button:hover {
+  opacity: 1;
+}
+.gatsby-code-button:after {
+  visibility: hidden;
+  position: absolute;
+  display: none;
+  padding: 5px;
+  content: attr(data-tooltip);
+  color: #fff;
+  font-size: 16px;
+  background-color: #000;
+  white-space: nowrap;
+}
+.gatsby-code-button[data-tooltip]:after {
+  top: 26px;
+  right: 0;
+}
+.gatsby-code-button[data-tooltip]:hover:after,
+.gatsby-code-button[data-tooltip]:focus:after {
+  /*visibility: visible;*/
+  /*display: block;*/
+  /*z-index: 200;*/
+}
+.gatsby-code-button .gatsby-code-button-icon {
+  display: none;
+}
+.gatsby-code-button-toaster {
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+}
+.gatsby-code-button-toaster-text {
+  width: 100%;
+  margin: 0 15px;
+  max-width: 850px;
+  padding: 20px;
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-family: monospace;
+  color: #fff;
+  @apply bg-gray-800;
+  border-radius: 2px;
+  text-align: center;
+  opacity: 0;
+  animation: animation 3s cubic-bezier(0.98, 0.01, 0.53, 0.47);
+}
+.gatsby-code-button-buffer {
+  position: fixed;
+  top: -9999px;
+  opacity: 0;
+}
+@keyframes animation {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}

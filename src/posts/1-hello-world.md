@@ -8,7 +8,7 @@ tags: ['technology']
 
 Hello World!
 
-Thanks to Zane Chua's (zanechua.com) recommendation, I've set up this site is now built with Gatsby, hosted on GitHub and distributed via CloudFlare.
+I've set up this blog which is powered by Gatsby, hosted on GitHub and distributed via CloudFlare. Thanks Zane Chua for the recommendations!
 
 Thought I'd take this platform to share some ideas and useful stuff to help everyone go the extra mile with technology!
 

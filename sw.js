@@ -59,7 +59,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "41d8d138ce91d562789b394748e74baf"
+    "revision": "07558e27b1be4fc0aae5fb912be044cb"
   },
   {
     "url": "page-data/sq/d/3649515864.json",
@@ -85,7 +85,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/hello-world/page-data.json",
-    "revision": "14b944f162f7b4e6db25aed69ba04eac"
+    "revision": "776959cd90a1aa41b111dd6142bc8407"
+  },
+  {
+    "url": "page-data/blog/senoko/page-data.json",
+    "revision": "6bcfebfa532adf383c4607c744c176f3"
   },
   {
     "url": "manifest.webmanifest",

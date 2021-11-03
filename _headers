@@ -42,6 +42,15 @@
   Link: </component---cache-caches-gatsby-plugin-offline-app-shell-js-978ad4957de37ad22e4c.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/offline-plugin-app-shell-fallback/page-data.json>; rel=preload; as=fetch; crossorigin
+/blog/sf-functions
+  Link: </webpack-runtime-7fde608ef48adb4c0c22.js>; rel=preload; as=script
+  Link: </framework-e83e5c6deaa6a0b453fd.js>; rel=preload; as=script
+  Link: </app-ddfe1e671d457213ae82.js>; rel=preload; as=script
+  Link: </b3e0edbf557b01eaf43e59b06e56d70473c02d2c-2e1257423bf13238e8ee.js>; rel=preload; as=script
+  Link: </8404b144cf2ad46e7de17bf4d936317e474a8ae6-520f9dfefd120ea2fb8d.js>; rel=preload; as=script
+  Link: </component---src-templates-blog-post-js-d635a0135ed5153a1391.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/blog/sf-functions/page-data.json>; rel=preload; as=fetch; crossorigin
 /blog/senoko
   Link: </webpack-runtime-7fde608ef48adb4c0c22.js>; rel=preload; as=script
   Link: </framework-e83e5c6deaa6a0b453fd.js>; rel=preload; as=script
@@ -78,6 +87,15 @@
   Link: </component---src-templates-tags-js-c062f7221408f5c6cc11.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/tags/promos/page-data.json>; rel=preload; as=fetch; crossorigin
+/tags/salesforce/
+  Link: </webpack-runtime-7fde608ef48adb4c0c22.js>; rel=preload; as=script
+  Link: </framework-e83e5c6deaa6a0b453fd.js>; rel=preload; as=script
+  Link: </app-ddfe1e671d457213ae82.js>; rel=preload; as=script
+  Link: </b3e0edbf557b01eaf43e59b06e56d70473c02d2c-2e1257423bf13238e8ee.js>; rel=preload; as=script
+  Link: </8404b144cf2ad46e7de17bf4d936317e474a8ae6-520f9dfefd120ea2fb8d.js>; rel=preload; as=script
+  Link: </component---src-templates-tags-js-c062f7221408f5c6cc11.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/tags/salesforce/page-data.json>; rel=preload; as=fetch; crossorigin
 /tags/technology/
   Link: </webpack-runtime-7fde608ef48adb4c0c22.js>; rel=preload; as=script
   Link: </framework-e83e5c6deaa6a0b453fd.js>; rel=preload; as=script

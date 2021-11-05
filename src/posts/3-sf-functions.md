@@ -35,6 +35,8 @@ Also, with Salesforce Functions, customers now can push past previously [org gov
 
 I had the opportunity to play around with one of the [sample demo code here on Github](https://github.com/trailheadapps/functions-recipes). In there, one of the sample code which was super cool was the ability to run functions (using either JavaScript or Java) which looks through a [large dataset of schools](https://code.org/learn/find-school/json), and finds the nearest top x schools taking reference to my location.
 
+I did a little tweak and replaced the sample dataset with the list of Singapore's primary schools, and I was able to easily find the nearest primary schools from my current location! This could be super useful for parents who are trying to find the nearest primary schools from their homes for Primary 1 registration exercises!
+
 _Note: The dataset is located in the functions-recipes/functions/01_Intro_ProcessLargeData_JS/data/ folder._
 
 By invoking the function, it returns the list in a JSON response, or I could easily have this plotted out on a map very easily! Pretty cool!

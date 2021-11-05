@@ -93,7 +93,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/sf-functions/page-data.json",
-    "revision": "e5f31e2a831be2ef63333357f6c8d06c"
+    "revision": "ddf958e358c0981193f19caadab40948"
   },
   {
     "url": "manifest.webmanifest",

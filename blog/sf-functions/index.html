@@ -67,6 +67,7 @@
 <p>Also, with Salesforce Functions, customers now can push past previously <a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_apexgov.htm" target="_blank" rel="nofollow noopener noreferrer">org governor limits</a> presented with Apex.</p>
 <h1 id="Function-Receipes-Demo" style="position:relative;">Function Receipes Demo<a href="#Function-Receipes-Demo" aria-label="Function Receipes Demo permalink" class="remark-header-anchor after"><svg id="header-anchor-icon" aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
 <p>I had the opportunity to play around with one of the <a href="https://github.com/trailheadapps/functions-recipes" target="_blank" rel="nofollow noopener noreferrer">sample demo code here on Github</a>. In there, one of the sample code which was super cool was the ability to run functions (using either JavaScript or Java) which looks through a <a href="https://code.org/learn/find-school/json" target="_blank" rel="nofollow noopener noreferrer">large dataset of schools</a>, and finds the nearest top x schools taking reference to my location.</p>
+<p>I did a little tweak and replaced the sample dataset with the list of Singapore's primary schools, and I was able to easily find the nearest primary schools from my current location! This could be super useful for parents who are trying to find the nearest primary schools from their homes for Primary 1 registration exercises!</p>
 <p><em>Note: The dataset is located in the functions-recipes/functions/01_Intro_ProcessLargeData_JS/data/ folder.</em></p>
 <p>By invoking the function, it returns the list in a JSON response, or I could easily have this plotted out on a map very easily! Pretty cool!</p>
 <p><span
@@ -75,26 +76,26 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/96415b168e2b0f06ebe7a19cfad872b6/460fa/functions-json.png"
+    href="/static/5057ece2f2c30cdeac3f29eb8f074431/be1b7/functions-json.png"
     style="display: block"
     target="_blank"
     rel="noopener"
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 48%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACXklEQVQoz23R60vTURzH8eNIp/OWTp3bTPNK3q/MOZ2WFyqyRHO6NGGpqZv7bW66maBlWD0ISwzsgvYg0TB74DDsn7CH9r+4lb5jv0UidODD4fvgvPh+z1d4pjx43B6kSTdOh8TG+gbfDw4I7O3xZWeH7a0tPm9vy/fX3V0CgQDf9vfZ/LTJlCv81ovL6UaadOGwS4hprwf7mBPb0AjDthEOD38QDAY5Pg7y++SE42CQUOgXwVBIrk9Pkc/R0U/s45NyI+F4PV7uW0cQfv8MjgkJ+7iDpacLPHDMkVvbQ2mjlZKme5SaByg2WeUUGfsorO8lq7KLJy9Web60iN/nwzfjw2n3MGAZRszOhgs342MOFubnuGWZQKiN6Mo7UWY1E61tQqjrEWoD4mIdIrkWcaEUyf+MxcfzSJILl+RmfHSSwb5RxKNZP1PSNJU1Lehyiqm7akGVc40CQy8pBR3E6M1E65rkxOjMxF5qJirDRJ/NS2Z2KaqUXBLT8knWFHDjuuUMLCppQJmcQ7mpm4TLrWRXd8lYGJAxvVkGw12HwZ4ht4yJaA1CqUUoM2lv6zkDr5SZSEgrpLrZQmxWC/qK2yg0JkS6kaiMhn9RaBoQqQa6B10kpecjYrUoVHoU8Xo62u+eB+NT8ymp70KR2Uh2VVfk/xKqEInVZ0mqQcRV0NnviIDKzAio0p0Hi8tMJKrzaL8zTFWrjZtWLzVtNoqM/RSGt/s34U3nGfoYcS4Qn5orj/tfsKSiERGnxS75+bC+yevV9yyvvGN55e25vHy1xpu1jzy0zyBiNBEs7gz8A9JRh6nuOIcVAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    style="padding-bottom: 51%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbklEQVQoz23RSU+TURiG4YO0oAgVLWMDCIJUsQVKkVGCNBIgAiFQBmmhBQotpfB1gDKDSBA17gy/xMRElERw48BSxrhQQYm/4jb9GsUFizdPzllc53lzxKhHwu/z4XZ6sFkduIZG2NvZ4ffJT46PvvP1cJ/D/V0O9nc5PNiT705+HXP04xtLi8s4+pwMD43gHHTj6HchpFGJgM+HzTrI/QYz9p4BXq1v8vL1FuvvPvJm8xNvtz6z8X6bja1tOUPnD9tfmJ99SE+3nQG7kwH7EJbOPoRXkghOjOMa9NBvc+D3+smraEfEFxOlqUKRWolQFSHO6xEX8hExBQih5XqJmccrq4y4PUhjPnySD9eQJwR6mQxO4HaO4R3z8njlESW1vSRo68mvtnKtuJXYzBrOJVcQmVKJUnNHfsx4z87a2gtmpoLMzc7g9QRw2DyI8UCAqckgbtcYZnM3FqsdQ42Fyzm15JSYiUgqR6hLw5lYJsOhxgZTL/7AJI3NbbS1d9Pc0sGDLjsiODHB9NSkDKpTb6JKvsGtyg5is0xodI2oc+vCayeWyehfsLCmB53RhBAqRHQqQsRTUFT9PyiRmqEnQaNFX9UpQ7ml7WQZW4nLMslYZHIFipRKeeVQQ2N5HSIygShVBkKRhPG26RQccUkkp+lQJWnJLm4hJr2aq4YWuZm4WIiIM4Qn9EHKPLTlHRhKaxERapRx6YjIRIrOAtUaHU0WP1VNwzR0+Smtd6Cvtv6b/Ls95JZ30uGYo7iiHhFxBWVcxtlgaOXoS5n4g0ssLj9nfumZnDMLT5heWA3PfDhnF5+Slm1EKJNQxJ42/AOksIk5lbNvpwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="Functions JSON"
         title="Functions JSON"
-        src="/static/96415b168e2b0f06ebe7a19cfad872b6/5a190/functions-json.png"
-        srcset="/static/96415b168e2b0f06ebe7a19cfad872b6/772e8/functions-json.png 200w,
-/static/96415b168e2b0f06ebe7a19cfad872b6/e17e5/functions-json.png 400w,
-/static/96415b168e2b0f06ebe7a19cfad872b6/5a190/functions-json.png 800w,
-/static/96415b168e2b0f06ebe7a19cfad872b6/c1b63/functions-json.png 1200w,
-/static/96415b168e2b0f06ebe7a19cfad872b6/29007/functions-json.png 1600w,
-/static/96415b168e2b0f06ebe7a19cfad872b6/460fa/functions-json.png 1910w"
+        src="/static/5057ece2f2c30cdeac3f29eb8f074431/5a190/functions-json.png"
+        srcset="/static/5057ece2f2c30cdeac3f29eb8f074431/772e8/functions-json.png 200w,
+/static/5057ece2f2c30cdeac3f29eb8f074431/e17e5/functions-json.png 400w,
+/static/5057ece2f2c30cdeac3f29eb8f074431/5a190/functions-json.png 800w,
+/static/5057ece2f2c30cdeac3f29eb8f074431/c1b63/functions-json.png 1200w,
+/static/5057ece2f2c30cdeac3f29eb8f074431/29007/functions-json.png 1600w,
+/static/5057ece2f2c30cdeac3f29eb8f074431/be1b7/functions-json.png 1887w"
         sizes="(max-width: 800px) 100vw, 800px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -108,25 +109,26 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/c97c774c756128039db041c213e4ab95/553fd/functions-lwc.png"
+    href="/static/de1c77199dcc6112b04e30fa1c9b87ff/09262/functions-lwc.png"
     style="display: block"
     target="_blank"
     rel="noopener"
   >
     <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 43.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvUlEQVQoz32RS2/aQBSF/f//RLvoqlLVXYLURRZtHpQEEAkQsA3G9tiMn2NjYyMbvipO0ySq2pGOru5c3U9nzmjL5Yrl44ooSNjlFbnak6uCPNs/S5XkWUWxq9705es8K8lUSVnU/LxcoBVZRJFL4iwlSVbEqUsaOQTpA30pufR2iCwiU4qmafnfWU59tNHGYX5/w2y+YLz2uTcthGMg5ZAfdsJXUzGJpxhbl1hmRKFCJTsOdUu9b7p6Op06oD4L0MZiw2wxxVn3MbYOIzth6IZcWCbnesaFYTEMVxihQyAihLtFqZwnxvF46tS2x2eHM4lmygmOP2Xgj1l4E6LQwLi/ZTDfcGNFXFkht1JgBDZSxHgiIIly6qrpHHaqmt8OJdrWH+OLMeZ2jKFf4416JPYdsRjh+St6esWVL9GlhXQTtn5MFKgO0jbHdxl2wAc7ZLJxSSIdpX9nPTijb3n0zJRzc8/ZssRIMnbVjrIoKYqSuj78ee5Tfq8ZSrQLPeXLouHbMuRyLfhsnPgwh0+P8HEOvVVLUh7/+bN/AW/dmjuxp++1DOySoZ0zWKuujkTBxMlIy8O75bd6uX8B/gLGgKFo3FnTGQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 51%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACRklEQVQoz32Sy2sTURSH8+cIIr4fIOJCUKwvhIILF+1KXInd+j+4stKn1VWhCrYLSzXRoqXYmnQS82qSmek885jJJJNMk5Y2zeSTSaF2If7gg3vOvXwcuCeUSxeplGrUHQ+77GKoNo7t0XTb/V7N8XDrLdzaXxr19hFNd4eq3cCu1DENh9D05BJfFlf5HokS/Zkl/qtAckMiKUgkYhK/oyLJmEQ6vkVKkEnHZdKCTEo4fBOQ6teHd6GFhVWEWAYhmiWX0ZDyJqpcYm0lS2wtTjKZIZ3NsyUbKFsmebGCKBZRZRtdCahiqFVMrYqhVQllkwr7nR0O4+P3Ov1T0XBQdIGyp2C5GlZdxKjnkKsVElYVy9qm5ri0tnc5nlAmUWR/v4OpNFhf1rCKHgcdH3GzjCRlsCoqmlZA0vLorkqxmuKbaiEpHlbJxq649Hq9Pt2uT2jw2hseXZ/h4ZUpbp8eY/DqNA8uT/HiyUeUco6EqZE38hQii8jhMGmtQFj2MEttXKdJs7GD3+31p+sedAkNnB1j4MwYd86Nc+/CBHfPj3PjxCtGhj4QKykUShkUN09+5iWVp49R5t6yUWxgljwcu4bntfvTBel0OoQCyXHuX5rk1qnXPBtaQNAd5JKOYorYc6OIs5PEYwl+6HvIWrBmNvVa80jo+/4/hBcnuHlylJHheVaUNhGpzadCm2WtwXsd3kkwuwmyGggdGm67Lwuk/xU+H57nm9EjrPf4qnVZUuGz4hPRuqybHWruHq3tFru7e0c/HAj/AD2FpQhJeye/AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="Functions LWC"
         title="Functions LWC"
-        src="/static/c97c774c756128039db041c213e4ab95/5a190/functions-lwc.png"
-        srcset="/static/c97c774c756128039db041c213e4ab95/772e8/functions-lwc.png 200w,
-/static/c97c774c756128039db041c213e4ab95/e17e5/functions-lwc.png 400w,
-/static/c97c774c756128039db041c213e4ab95/5a190/functions-lwc.png 800w,
-/static/c97c774c756128039db041c213e4ab95/c1b63/functions-lwc.png 1200w,
-/static/c97c774c756128039db041c213e4ab95/553fd/functions-lwc.png 1255w"
+        src="/static/de1c77199dcc6112b04e30fa1c9b87ff/5a190/functions-lwc.png"
+        srcset="/static/de1c77199dcc6112b04e30fa1c9b87ff/772e8/functions-lwc.png 200w,
+/static/de1c77199dcc6112b04e30fa1c9b87ff/e17e5/functions-lwc.png 400w,
+/static/de1c77199dcc6112b04e30fa1c9b87ff/5a190/functions-lwc.png 800w,
+/static/de1c77199dcc6112b04e30fa1c9b87ff/c1b63/functions-lwc.png 1200w,
+/static/de1c77199dcc6112b04e30fa1c9b87ff/29007/functions-lwc.png 1600w,
+/static/de1c77199dcc6112b04e30fa1c9b87ff/09262/functions-lwc.png 1896w"
         sizes="(max-width: 800px) 100vw, 800px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"

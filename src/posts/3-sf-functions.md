@@ -6,15 +6,15 @@ title: 'Salesforce Functions is live!'
 tags: ['technology', 'salesforce']
 ---
 
-Yay! [Salesforce Functions](https://developer.salesforce.com/docs/platform/functions/overview) has just been launched General Availabile (GA) on 12 Oct, and here's a little on what I learnt about it!
+Yay! [Salesforce Functions](https://developer.salesforce.com/docs/platform/functions/overview) has just been launched General Availabile (GA) on 12 Oct 2021, and here's a my 2 cents on what I've learnt about it!
 
 ## What is Serverless
 
-Serverless computing has been a pretty interesting concept in the past few years. Contrary to the literal meaning of its name, 'Serverless' doesn't mean there are no servers involved, but rather developers no longer have to worry about servers or infra requirements, allowing them to focus on the code/task itself, as the serverless environment abstracts away infrastructure into a solid Application Development ecosystem/platform.
+Serverless computing has been a pretty interesting concept in the past few years. Contrary to the literal meaning of its name, 'Serverless' doesn't mean there are no servers involved, but rather developers no longer have to worry about servers or infrastructure requirements. This allows them to focus their efforts on the code/task itself, as the serverless environment abstracts away infrastructure into a solid Application Development ecosystem/platform.
 
-Functions are essentially modularized programs that does one small bite-size task, and are usually used in an app that calls functions to do complex tasks.
+Functions are essentially modularized code/programs that does small bite-size tasks, and are usually used in a larger application that invokes/calls functions to do complex tasks. We can perhaps think of functions as pieces of lego building blocks to build a larger application.
 
-Imagine a world where developers can develop code and execute functions to perform tasks on demand, and not have to worry too much about the underlying compute infrastructure. This is also probably better described as Functions-as-a-service (FaaS).
+With the concept of serverless, developers can develop code and execute functions to perform tasks on demand, and not have to worry too much about the underlying compute infrastructure. This is also probably better described as Functions-as-a-service (FaaS).
 
 The serverless concept has the potential to revolutionize the way developers write, deploy and execute code, which can now respond to requests and process data based on events and triggers.
 
@@ -35,11 +35,9 @@ Also, with Salesforce Functions, customers now can push past previously [org gov
 
 I had the opportunity to play around with one of the [sample demo code here on Github](https://github.com/trailheadapps/functions-recipes). In there, one of the sample code which was super cool was the ability to run functions (using either JavaScript or Java) which looks through a [large dataset of schools](https://code.org/learn/find-school/json), and finds the nearest top x schools taking reference to my location.
 
-I did a little tweak and replaced the sample dataset with the list of Singapore's primary schools, and I was able to easily find the nearest primary schools from my current location! This could be super useful for parents who are trying to find the nearest primary schools from their homes for Primary 1 registration exercises!
+I made a little tweak and replaced the dataset with the list of Singapore's primary schools, and I was able to easily find the nearest primary schools from my current location! This could be super useful for parents who are trying to find the nearest primary schools from their homes for Primary 1 registration exercises!
 
-_Note: The dataset is located in the functions-recipes/functions/01_Intro_ProcessLargeData_JS/data/ folder._
-
-By invoking the function, it returns the list in a JSON response, or I could easily have this plotted out on a map very easily! Pretty cool!
+By invoking the function, it returns the list in a JSON response, or I could easily have this plotted out on a map! Pretty cool!
 
 ![Functions JSON](../images/posts/3-functions/functions-json.png)
 

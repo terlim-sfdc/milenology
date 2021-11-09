@@ -59,7 +59,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "f26ce0096362bbbb8f4b39e77943f35c"
+    "revision": "80347b9b1a6f2f1556220c8536967263"
   },
   {
     "url": "page-data/sq/d/3649515864.json",
@@ -84,6 +84,10 @@ self.__precacheManifest = [
     "url": "component---src-templates-blog-post-js-d635a0135ed5153a1391.js"
   },
   {
+    "url": "page-data/blog/cryptodotcom/page-data.json",
+    "revision": "6d5334180dda170381de847b4978996b"
+  },
+  {
     "url": "page-data/blog/hello-world/page-data.json",
     "revision": "776959cd90a1aa41b111dd6142bc8407"
   },
@@ -93,7 +97,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/sf-functions/page-data.json",
-    "revision": "7e2f2e5f0c8ad4041903024300d5a3c5"
+    "revision": "07a2446737535841cf785b72e982ce01"
   },
   {
     "url": "manifest.webmanifest",

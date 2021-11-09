@@ -59,7 +59,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "80347b9b1a6f2f1556220c8536967263"
+    "revision": "3b565a12d8055a919c4508b597c092d6"
   },
   {
     "url": "page-data/sq/d/3649515864.json",
@@ -85,7 +85,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/cryptodotcom/page-data.json",
-    "revision": "6d5334180dda170381de847b4978996b"
+    "revision": "a030951e30a53c52d471c6893f2beacf"
   },
   {
     "url": "page-data/blog/hello-world/page-data.json",

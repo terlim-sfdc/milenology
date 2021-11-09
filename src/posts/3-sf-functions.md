@@ -31,7 +31,7 @@ This is super exciting, as developers can run non Apex code in the Salesforce un
 
 Also, with Salesforce Functions, customers now can push past previously [org governor limits](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_apexgov.htm) presented with Apex.
 
-# Function Receipes Demo
+# Function Recipes Demo
 
 I had the opportunity to play around with one of the [sample demo code here on Github](https://github.com/trailheadapps/functions-recipes). In there, one of the sample code which was super cool was the ability to run functions (using either JavaScript or Java) which looks through a [large dataset of schools](https://code.org/learn/find-school/json), and finds the nearest top x schools taking reference to my location.
 

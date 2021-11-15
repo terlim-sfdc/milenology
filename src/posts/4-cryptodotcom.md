@@ -12,7 +12,7 @@ With the world shifting towards more digital, coupled with the disadvantages of 
 
 If you're keen to get started or are new to crypto, I'd recommend for you to get some free crypto from Crypto.com - while the promotion lasts! Here's a little sharing of it from my own experience.
 
-**_Disclaimer_**: This post reflects solely my opinion, be sure to **do your own research (DYOR)** before making any investments, especially in the crypto space! I'd like to make a disclaimer that **this is not financial advice :)**
+**_Disclaimer_**: This article reflects my opinion and I'm sharing my experiences. **It is not financial advice and this is also not a sponsored article.** Be sure to **do your own research (DYOR)** before making any investments, especially in the crypto space!
 
 <br>
 
@@ -72,6 +72,8 @@ Once you have transferred in XSGD and made the purchase for SGD$500 worth of CRO
 
 ![Xstraits](../images/posts/4-cryptodotcom/xstraits.png)
 
+![Stake 500](../images/posts/4-cryptodotcom/stake-500.png)
+
 If you're new to the concept of [staking in Crypto.com](https://help.crypto.com/en/articles/1961286-how-do-i-stake-cro-on-the-crypto-com-app), you can think of it like a fixed deposit, where you need to buy and hold the CRO tokens in your Crypto.com wallet for a period of 6 months (no selling or withdrawing allowed). The SGD$500 will be subjected to the fluctuations of the value of the CRO tokens during the 6 months (with potential upside if CRO moons)!
 
 **Note:** Alternatively, apart from the Ruby Steel card, you can also choose the higher tier cards for more benefits (but you would need to stake more CRO). For example, if you stake SGD$5,000 for the Jade Green/Royal Indigo, you'll get 'free' Spotify + Netflix, as well as Airport Lounge access! However, for maximum ROI, I believe the Ruby Steel card is the best per my [summary](#summary) below.
@@ -112,7 +114,7 @@ One thing you may want to note is that Crypto.com is [launching these offers ind
 
 ## What is CRO and what can you do with it? <a name="whatiscro"></a>
 
-During the time of writing this blog post, one CRO token is worth ~SGD$0.50. It has gone up almost 2x since i staked my SGD$500 for the Ruby Steel card, which is now worth >SGD$1,000. This made me regret a little not staking more for the higher tier cards :p
+During the time of writing this blog article, one CRO token is worth ~SGD$0.50. It has gone up almost 2x since i staked my SGD$500 for the Ruby Steel card, which is now worth >SGD$1,000. This made me regret a little not staking more for the higher tier cards :p
 
 Please do understand that CRO's value (like any crypto coins today) can be very volatile! Hopefully in another 105 days time when I unstake, my SGD$500 staked CRO will be worth SGD$5,000 and I can automatically qualify for the Royal Indigo & Jade Green cards :D
 
@@ -149,4 +151,4 @@ On the flipside, the risk is that should CRO go down in value, you may lose part
 
 In any case, I see more upside than downside in CRO! Crypto.com has been recently launching lots of campaigns such as [Missions Campaigns](https://blog.crypto.com/crypto-com-app-missions/) to promote more trades on their platform, which in my opinion is a good sign for CRO.
 
-I hope this helps you kick start on your crypto journey! And thanks to many from the Seedly Facebook group for all your feedback on this post! :)
+I hope this article helps you kick start on your crypto journey, and if you found this useful, I'd truly appreciate it if you would use my Crypto.com referral code (**bmrv56k9ez**) in return, so we can all grow our CRO and crypto count together :) Thanks to many from the Seedly Facebook group for all your feedback on this article too! :)

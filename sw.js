@@ -85,7 +85,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/cryptodotcom/page-data.json",
-    "revision": "1da3139abfdc1bc37f97f66dd018f547"
+    "revision": "90aa161de46f3317f8716ed9568b210e"
   },
   {
     "url": "page-data/blog/hello-world/page-data.json",

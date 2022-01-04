@@ -36,17 +36,17 @@ self.__precacheManifest = [
     "url": "styles.e0b5afed34e57a32a16f.css"
   },
   {
-    "url": "app-ddfe1e671d457213ae82.js"
+    "url": "app-34d4e7c6a1efb9c6345b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "22123e543fe6977aee32d720bad852f7"
+    "revision": "475d9790fc5b980d9fe547bea0ba9fc2"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-978ad4957de37ad22e4c.js"
   },
   {
-    "url": "polyfill-1973e99f3e0f9c4a3573.js"
+    "url": "polyfill-3cd206005a3ae50eb9fc.js"
   },
   {
     "url": "b3e0edbf557b01eaf43e59b06e56d70473c02d2c-2e1257423bf13238e8ee.js"
@@ -59,7 +59,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "cbf677afa2774e002ffcee1fe61c7c7f"
+    "revision": "1d0388b8930c49d2f693eb10dda78e99"
   },
   {
     "url": "page-data/sq/d/3649515864.json",
@@ -71,7 +71,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "f3094aa9a4130c5512b490ac78436702"
+    "revision": "614400c0d560e1e409851f6d1abf1e45"
   },
   {
     "url": "component---src-pages-about-js-ae026885c8ea1fe8fc1b.js"
@@ -90,6 +90,10 @@ self.__precacheManifest = [
   {
     "url": "page-data/blog/hello-world/page-data.json",
     "revision": "776959cd90a1aa41b111dd6142bc8407"
+  },
+  {
+    "url": "page-data/blog/reactnativesalesforce/page-data.json",
+    "revision": "61bc9a4cc5b7d2973a306b93b010f260"
   },
   {
     "url": "page-data/blog/senoko/page-data.json",
@@ -193,7 +197,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-ddfe1e671d457213ae82.js`))) {
+  if (!resources || !(await caches.match(`/app-34d4e7c6a1efb9c6345b.js`))) {
     return await fetch(event.request)
   }
 

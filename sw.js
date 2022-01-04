@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "styles.e0b5afed34e57a32a16f.css"
   },
   {
-    "url": "app-34d4e7c6a1efb9c6345b.js"
+    "url": "app-5ec31dcc96a699e9919b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "475d9790fc5b980d9fe547bea0ba9fc2"
+    "revision": "5464a92e1c656747fdf8dd83bef886e0"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-978ad4957de37ad22e4c.js"
@@ -71,7 +71,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "614400c0d560e1e409851f6d1abf1e45"
+    "revision": "344b1c613fc6d08d0321432ed4e14c28"
   },
   {
     "url": "component---src-pages-about-js-ae026885c8ea1fe8fc1b.js"
@@ -93,7 +93,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/reactnativesalesforce/page-data.json",
-    "revision": "61bc9a4cc5b7d2973a306b93b010f260"
+    "revision": "c2cbed3c006875cd5f2506207438a15f"
   },
   {
     "url": "page-data/blog/senoko/page-data.json",
@@ -197,7 +197,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-34d4e7c6a1efb9c6345b.js`))) {
+  if (!resources || !(await caches.match(`/app-5ec31dcc96a699e9919b.js`))) {
     return await fetch(event.request)
   }
 

@@ -6,7 +6,7 @@ title: 'Building React Native with Salesforce'
 tags: ['technology', 'salesforce']
 ---
 
-With the rise in modern app development and an increased demand by customers for native ways to allow developers to extend and customize the apps they’re building, I'm sharing this post to discuss how I have developed a [React Native](https://reactnative.dev/) + [Expo](https://expo.dev/) mobile app using open source tools, while easily extending a set of architecture solution pattern that expands the power of Salesforce Platform and data to developers.
+With the rise in modern app development and an increased demand by customers for native ways to allow developers to extend and customize their line-of-business applications, I'm sharing this post to discuss how I have developed a [React Native](https://reactnative.dev/) + [Expo](https://expo.dev/) mobile app using open source tools, while easily extending a set of architecture solution pattern that expands the power of Salesforce Platform and data to developers.
 
 <br />
 
@@ -14,21 +14,33 @@ With the rise in modern app development and an increased demand by customers for
 
 This mobile app demo aims to showcase a simple retail (Eureka) clienteling use-case, where in-store associates are empowered to identify their most loyal customers and their preferences, so as to provide a more targeted service to improve sales.
 
-In this demo app, some clienteling features include the Home Screen which features a sample dashboard performance of the store and associates, a Me - Profile Screen centered around the associate's performance with the business and most importantly - a Customers Screen for associates to see details of their loyal customers.
+In this demo app, some clienteling features include the Home Screen which features a sample dashboard performance of the store and associates, a Me - Profile Screen centered around the associate's performance, and most importantly, a Customers Screen for associates to access insights of their loyal customers.
 
 ![Eureka App Screenshots](../images/posts/5-reactnativesalesforce/app-screenshots.png)
 
-In this blog, I'll focus more on how to interact with Salesforce via the mobile app.
+In this blog, I'll focus more on how I can easily interact with Salesforce data via the mobile app. For the purpose of this demo, I have created a custom object in Salesforce called Eureka Customers, and I want to enable the mobile app to interact with the data securely and at scale.
 
-For interested developers, the full source code of the React Native sample mobile app is available on Github:
+For interested developers, the full source code of the React Native sample mobile app is available on Github (note that it is still work in progress).
 
 [https://github.com/terlim-sfdc/eureka](https://github.com/terlim-sfdc/eureka)
 
 <br />
 
-## Connecting to Salesforce CRM Data - Heroku Connect
+## High-level Architecture
 
-In order for the Eureka Mobile App to interact with Salesforce CRM Data, I used [Heroku Connect](https://www.heroku.com/connect), which is an amazing add-on that easily synchronizes data between a Salesforce organization and a Heroku Postgres database. As you see in the screenshot below, I was able to easily create a mapping of the fields and records of the Eureka Customers object to a table in Postgres with just clicks!
+To start off, here is the high-level architecture:
+
+1. [Heroku Connect](#herokuconnect), which synchronizes data two ways between the Salesforce organization (Eureka Customer Custom Object) and the Heroku Postgres database
+2. [A Heroku App](#apilayer) (ExpressJS) is built which serves as the API interface for interacting with the data in the Postgres Database
+3. The [Eureka Mobile App](#mobileapp) uses Axios library to send and retrieve data from the Postgres Database via the Heroku App.
+
+![Salesforce Architecture](../images/posts/5-reactnativesalesforce/architecture.png)
+
+<a name="herokuconnect"></a>
+
+## Connecting to Salesforce CRM Data using Heroku Connect
+
+In order for the Eureka Mobile App to interact with Salesforce CRM Data (Eureka Customer Custom Object), I used [Heroku Connect](https://www.heroku.com/connect), which is an amazing add-on that easily synchronizes data between a Salesforce organization and a Heroku Postgres database. As you see in the screenshot below, I was able to easily create a mapping of the fields and records of the Eureka Customers object to a table in Postgres with just clicks!
 
 ![Heroku Connect Mapping](../images/posts/5-reactnativesalesforce/heroku-connect.png)
 
@@ -36,9 +48,11 @@ In order for the Eureka Mobile App to interact with Salesforce CRM Data, I used 
 
 <br />
 
+<a name="apilayer"></a>
+
 ## The API interface layer on Heroku
 
-Once the mapping of the Salesforce CRM is completed and replicated on a Postgres database in Heroku, the next step involves creating an API interface layer to handle the API requests from the app. I used [ExpressJS](https://expressjs.com/) to create this middleware layer to be utilized by the mobile app (and in fact any other apps). This is actually a very simple web app hosted on Heroku, and I can easily query for the list of all the customer's data as follows using the HTTP GET method:
+Once the mapping of the Salesforce CRM is completed and replicated on a Postgres database in Heroku, the next step involves creating an API interface layer to handle the API requests from the mobile app (or in fact any other apps). I used [ExpressJS](https://expressjs.com/) to create this middleware layer to be utilized by the mobile app. This is actually a very simple web app hosted on Heroku, and I can easily query for the list of all the customer's data as follows using the HTTP GET method:
 
 ```javascript
 app.get('/customers', (req, res) => {
@@ -52,7 +66,7 @@ app.get('/customers', (req, res) => {
 });
 ```
 
-Alternatively, I can also use routes in my paths to easily query for each customer using their Customer ID, which is very useful within the Customer Details Screen:
+Alternatively, I can also create routes using paths to easily query for each customer using their Customer ID, which is very useful within the Customer Details Screen:
 
 ```javascript
 app.get('/customers/:userId', (req, res) => {
@@ -71,7 +85,7 @@ app.get('/customers/:userId', (req, res) => {
 });
 ```
 
-Finally, to allow my mobile app to modify existing data using the HTTP POST method, the following simple sample code allows me to update the Postgres database via an API call, and Heroku Connect magically synchronizes the Eureka Customer Object in Salesforce.
+Finally, to allow the mobile app to modify existing data using the HTTP POST method, the following code allows me to update the Postgres database via an API call. Once the Postgres database is updated, Heroku Connect magically synchronizes the Eureka Customer Object in Salesforce.
 
 ```javascript
 app.post('/customers', (req, res) => {
@@ -90,15 +104,20 @@ app.post('/customers', (req, res) => {
 });
 ```
 
-View the full source code of the API interface app on Github:
+In a typical production implementation, it would definitely be good practice to implement a security feature to ensure the right authentication exists in the header of the API requests, to allow only authenticated apps to access or make changes to the Postgres database and the Salesforce organization. For the purpose of this demo, this security feature wasn't implemented.
+
+For interested developers, you may view the full source code of this ExpressJS API interface app on Github:
 
 [https://github.com/terlim-sfdc/eureka-server/blob/master/app.js](https://github.com/terlim-sfdc/eureka-server/blob/master/app.js).
 
 <br />
+<a name="mobileapp"></a>
 
-## Accessing the Salesforce/Postgres Customers Data from the Mobile App
+## Using Salesforce Customers Data from the Mobile App
 
-Within the React Native Mobile App, Axios Javascript library is used to make the necessary HTTP requests and API calls to the API interface layer app. This a sample Javascript code which I used for querying the database content. Of course, this API can be called with any application that supports HTTP requests. To explain briefly on this sample code below, there is an asynchronous call using Axios to retrieve the customer list from the Postgres database, and _setCustomers_ is used to update the state of the customers data object in the app.
+Within the React Native Mobile App, Axios Javascript library is used to make the HTTP requests and API calls to the API interface layer app. This a sample code which is used for querying the database content.
+
+To explain briefly on this sample code below, there is an asynchronous call using Axios to retrieve the customer list from the Postgres database, and _setCustomers_ is used to update the state of the customers data object in the app.
 
 ```javascript
 // Fetch Customers from Database
@@ -125,11 +144,9 @@ const fetchCustomers = async () => {
 };
 ```
 
-Having implemented the feature to query the API via a GET method above, we should expect to also be able to call the POST method to modify the content of the Postgres database, and eventually also update the Eureka Customer Custom object within the Salesforce tenant/organization through Heroku Connect.
+Having implemented the feature to query the API via a GET method above, it is reasonable to also have a functionality to call the POST method to modify the content of the Postgres database. This eventually also updates the Eureka Customers Custom object within the Salesforce tenant/organization using Heroku Connect.
 
-This is a sample code of how the Update Customer Details Screen is implemented by calling the _handleSubmit_ method when the Customer Details Update form is submitted within the app, which sends the updated _customerDataObject_ from the state of the app to the Heroku ExpressJS App.
-
-In a typical production implementation, it would definitely be good practice to implement a security feature to ensure the right authentication exists in the header of this POST request, to allow only authenticated apps to make changes to the Postgres database and the Salesforce organization. For the purpose of this demo, this security feature wasn't implemented.
+Here is a sample code of how the Update Customer Details Screen is implemented by calling the _handleSubmit_ method when the Customer Details Update form is submitted within the app, which sends the updated _customerDataObject_ from the state of the app to the Heroku ExpressJS App.
 
 ```javascript
 const baseURL = `https://eureka-mobile-demo.herokuapp.com/customers`;
@@ -155,19 +172,9 @@ const handleSubmit = () => {
 };
 ```
 
-Once again, you may check out the full source code of the React Native sample mobile app on Github:
+For interested developers, you may check out the full source code of the React Native sample mobile app on Github (note that it is still work in progress).
 
 [https://github.com/terlim-sfdc/eureka](https://github.com/terlim-sfdc/eureka)
-
-## Architecture
-
-In a high level, this is what the architecture looks like.
-
-1. Heroku Connect which synchronizes data two ways between the Salesforce organization (Eureka Customer Custom Object) and the Heroku Postgres database
-2. A Heroku App (ExpressJS) is created which serves as the API interface for interacting with the data in the Postgres Database
-3. The Eureka Mobile App uses axios to send and retrieve data from the Postgres Database via the Heroku App (ExpressJS)
-
-![Salesforce Architecture](../images/posts/5-reactnativesalesforce/architecture.png)
 
 ## Summary
 

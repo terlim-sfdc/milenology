@@ -59,7 +59,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/index/page-data.json",
-    "revision": "1d0388b8930c49d2f693eb10dda78e99"
+    "revision": "bea26b014b9ca85f0677d4c02415d948"
   },
   {
     "url": "page-data/sq/d/3649515864.json",
@@ -93,7 +93,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/blog/reactnativesalesforce/page-data.json",
-    "revision": "c2cbed3c006875cd5f2506207438a15f"
+    "revision": "91fbe6ef2cd13f8cce84046d255f1782"
   },
   {
     "url": "page-data/blog/senoko/page-data.json",

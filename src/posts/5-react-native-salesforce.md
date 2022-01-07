@@ -104,7 +104,9 @@ app.post('/customers', (req, res) => {
 });
 ```
 
-In a typical production implementation, it would definitely be good practice to implement a security feature to ensure the right authentication exists in the header of the API requests, to allow only authenticated apps to access or make changes to the Postgres database and the Salesforce organization. For the purpose of this demo, this security feature wasn't implemented.
+In a typical production implementation, it would definitely be good practice to implement a security feature to ensure the right authentication exists in the header of the API requests, to allow only authenticated apps to access or make changes to the Postgres database and the Salesforce organization.
+
+For simplicity, the sample codes above did not include this security feature, although a Basic Auth was implemented in the Github sample codes.
 
 For interested developers, you may view the full source code of this ExpressJS API interface app on Github:
 

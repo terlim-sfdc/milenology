@@ -175,7 +175,7 @@
 <p>Once the mapping of the Salesforce CRM is completed and replicated on a Postgres database in Heroku, the next step involves creating an API interface layer to handle the API requests from the mobile app (or in fact any other apps). I used <a href="https://expressjs.com/" target="_blank" rel="nofollow noopener noreferrer">ExpressJS</a> to create this middleware layer to be utilized by the mobile app. This is actually a very simple web app hosted on Heroku, and I can easily query for the list of all the customer's data as follows using the HTTP GET method:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="20919682109076287000"
+              data-toaster-id="84398841136359590000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="Copied"
@@ -188,7 +188,7 @@
     }
     res.send(result.rows);
   });
-});`, `20919682109076287000`)"
+});`, `84398841136359590000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -209,7 +209,7 @@
 <p>Alternatively, I can also create routes using paths to easily query for each customer using their Customer ID, which is very useful within the Customer Details Screen:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="41312585679882490000"
+              data-toaster-id="41148665281142915000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="Copied"
@@ -227,7 +227,7 @@
       res.send(result.rows);
     }
   );
-});`, `41312585679882490000`)"
+});`, `41148665281142915000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -253,7 +253,7 @@
 <p>Finally, to allow the mobile app to modify existing data using the HTTP POST method, the following code allows me to update the Postgres database via an API call. Once the Postgres database is updated, Heroku Connect magically synchronizes the Eureka Customer Object in Salesforce.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="78465897802418930000"
+              data-toaster-id="3628965843143073000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="Copied"
@@ -271,7 +271,7 @@
       res.send(\`User modified with ID: \${id}\`);
     }
   );
-});`, `78465897802418930000`)"
+});`, `3628965843143073000`)"
             >
               <div
                 class="gatsby-code-button"
@@ -294,7 +294,8 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
-<p>In a typical production implementation, it would definitely be good practice to implement a security feature to ensure the right authentication exists in the header of the API requests, to allow only authenticated apps to access or make changes to the Postgres database and the Salesforce organization. For the purpose of this demo, this security feature wasn't implemented.</p>
+<p>In a typical production implementation, it would definitely be good practice to implement a security feature to ensure the right authentication exists in the header of the API requests, to allow only authenticated apps to access or make changes to the Postgres database and the Salesforce organization.</p>
+<p>For simplicity, the sample codes above did not include this security feature, although a Basic Auth was implemented in the Github sample codes.</p>
 <p>For interested developers, you may view the full source code of this ExpressJS API interface app on Github:</p>
 <p><a href="https://github.com/terlim-sfdc/eureka-server/blob/master/app.js" target="_blank" rel="nofollow noopener noreferrer">https://github.com/terlim-sfdc/eureka-server/blob/master/app.js</a>.</p>
 <br />
@@ -304,7 +305,7 @@
 <p>To explain briefly on this sample code below, there is an asynchronous call using Axios to retrieve the customer list from the Postgres database, and <em>setCustomers</em> is used to update the state of the customers data object in the app.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="67527247116058350000"
+              data-toaster-id="2328639008078248400"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="Copied"
@@ -330,7 +331,7 @@ const fetchCustomers = async () => {
       setIsLoading(false);
     }
   }
-};`, `67527247116058350000`)"
+};`, `2328639008078248400`)"
             >
               <div
                 class="gatsby-code-button"
@@ -365,7 +366,7 @@ const fetchCustomers = async () => {
 <p>Here is a sample code of how the Update Customer Details Screen is implemented by calling the <em>handleSubmit</em> method when the Customer Details Update form is submitted within the app, which sends the updated <em>customerDataObject</em> from the state of the app to the Heroku ExpressJS App.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="16345373441056310000"
+              data-toaster-id="17969967552305111000"
               data-toaster-class="gatsby-code-button-toaster"
               data-toaster-text-class="gatsby-code-button-toaster-text"
               data-toaster-text="Copied"
@@ -390,7 +391,7 @@ const handleSubmit = () => {
       console.log(error);
     });
   Alert.alert('Customer details updated!');
-};`, `16345373441056310000`)"
+};`, `17969967552305111000`)"
             >
               <div
                 class="gatsby-code-button"
